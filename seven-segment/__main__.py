@@ -11,6 +11,8 @@ from argparse import ArgumentParser
 
 from .display import *
 from .clock import Clock
+
+#Imports timer and stopwatch classes
 from .timer import ClockTimer
 from .stopwatch import Stopwatch
 
@@ -73,6 +75,7 @@ def main():
             while True:
                 sleep(1.0)
 
+        #Runs stopwatch mode
         elif args.mode == 'stopwatch':
             
             # ADD YOUR CODE HERE (then remove 'pass')
@@ -82,6 +85,7 @@ def main():
             while True:
                 sleep(1.0)
 
+        #Runs timer mode
         elif args.mode == 'timer':
             # ADD YOUR CODE HERE (then remove 'pass')
 

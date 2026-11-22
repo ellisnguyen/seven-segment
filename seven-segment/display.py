@@ -68,7 +68,7 @@ def clock_displays(digits, dp):
         # Set the 7-segment
             for seg_index in range(7):
                 output(SEGMENT_OUT_H[seg_index], SEGS_FOR_CHAR[digits[d]][seg_index])
-            if d == 2 and dp:
+            if d == 2 and dp: #Ensures only the third decimal (index 2) is turned on when in stopwatch mode
                 output(DP_OUT_H, True)
             else:
                 output(DP_OUT_H, False)
@@ -82,19 +82,18 @@ def clear_displays():
     for pin in ACTIVE_LOW_PINS:
         output(pin, HIGH)
 
-
+#Sets colon on and off
 def set_colon(state):
     output(COLON_OUT_H, state)
 
-
+#Sets LED on and off
 def set_led(state):
     output(LED_OUT_H, state)
 
-
+#Dtermines if the button is pressed
 def get_button_pressed():
     global inputs
     return inputs[BUTTON_IN].is_pressed
-
 
 
 def cleanup():
